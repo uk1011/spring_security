@@ -1,27 +1,51 @@
-🔐 Spring Security – JWT Role & Permission Based Authentication
+# 🔐 Spring Security – JWT Role & Permission Based Authentication
 
-This project demonstrates a secure backend authentication and authorization system built using Spring Boot and Spring Security.
+A secure backend authentication and authorization system built using **Spring Boot** and **Spring Security**.
 
-🔹 Key Features
+This project demonstrates an enterprise-style security architecture with JWT-based authentication and role-permission based authorization.
 
-JWT-based stateless authentication
+---
 
-Role-Based Access Control (RBAC)
+## 🚀 Features
 
-Permission-based fine-grained authorization
+- JWT-based stateless authentication
+- Role-Based Access Control (RBAC)
+- Permission-based fine-grained authorization
+- Method-level security using `@PreAuthorize`
+- Custom `UserDetailsService` implementation
+- BCrypt password encryption
+- Secure token validation using custom JWT filter
+- Stateless session management
 
-Method-level security using @PreAuthorize
+---
 
-Custom UserDetailsService implementation
+## 🏗️ Architecture
 
-BCrypt password encryption
+The project follows a hierarchical authorization model:
 
-🔹 Architecture
+- A **User** can have one or multiple roles  
+- A **Role** contains multiple permissions  
+- Permissions define granular access control  
 
-User → Role → Permission relationship model
+---
 
-Secure token validation using custom JWT filter
+## 🔑 Security Implementation
 
-Stateless session management
+- Authentication using **JWT (JSON Web Token)**
+- Authorization using:
+  - `hasRole()`
+  - `hasPermission()`
+  - `@PreAuthorize`
+- Custom Security configuration using `SecurityFilterChain`
+- Password encryption using **BCrypt**
 
-This project showcases enterprise-level authentication and authorization design using Spring Security.
+---
+
+## 🛠️ Tech Stack
+
+- Java  
+- Spring Boot  
+- Spring Security  
+- JWT  
+- Gradle  
+- Postman (API Testing)
